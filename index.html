@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Tela Login</title>
+</head>
+<script type="text/javascript" language="javascript">
+	function valida_form(){
+		if(document.getElementById("cpf").value.length < 3){
+			alert('Por favor, preencha o campo CPF');
+			document.getElementById("cpf").focus();
+			return false
+		}
+		else if(document.getElementById("placa").value.length < 3){
+			alert('Por favor, preencha o campo PLACA');
+			document.getElementById("placa").focus();
+			return false
+		}
+	}
+</script>
+<body>
+	<form method="post" action="listagem.php" id="formlogin" name="formlogin" >
+		<fieldset id="fie">
+			<legend>LOGIN</legend><br />
+			<table>
+				<tr>
+					<td>
+						<label>CPF : </label>
+					</td>
+					<td>
+						<input type="text" name="cpf" id="cpf"  maxlength="11" /><br />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>PLACA :</label>
+					</td>
+					<td>
+						<input type="text" name="placa" id="placa" maxlength="8" /><br />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="ENTRAR  " onClick="return valida_form()" />
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
